@@ -1,0 +1,159 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --moss-green: #90a955;
+  --clay-beige: #eae2b7;
+  --warm-oak: #b08968;
+  --soft-white: #faf9f6;
+  --charcoal: #2f2e2c;
+
+  /* Custom eco-friendly color palette for apartment DIY site */
+  --background: #faf9f6;
+  --foreground: #2f2e2c;
+  --card: #ffffff;
+  --card-foreground: #2f2e2c;
+  --popover: #ffffff;
+  --popover-foreground: #2f2e2c;
+  --primary: #90a955;
+  --primary-foreground: #faf9f6;
+  --secondary: #b08968;
+  --secondary-foreground: #faf9f6;
+  --muted: #eae2b7;
+  --muted-foreground: #2f2e2c;
+  --accent: #90a955;
+  --accent-foreground: #faf9f6;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: #e5dec8;
+  --input: #e5dec8;
+  --ring: #90a955;
+  --chart-1: #90a955;
+  --chart-2: #b08968;
+  --chart-3: #eae2b7;
+  --chart-4: #faf9f6;
+  --chart-5: #2f2e2c;
+  --radius: 0.75rem;
+  --sidebar: #faf9f6;
+  --sidebar-foreground: #2f2e2c;
+  --sidebar-primary: #90a955;
+  --sidebar-primary-foreground: #faf9f6;
+  --sidebar-accent: #eae2b7;
+  --sidebar-accent-foreground: #2f2e2c;
+  --sidebar-border: #e5dec8;
+  --sidebar-ring: #90a955;
+}
+
+.dark {
+  /* Dark mode with warm lamp glow aesthetic */
+  --background: #1a1918;
+  --foreground: #eae2b7;
+  --card: #2f2e2c;
+  --card-foreground: #eae2b7;
+  --popover: #2f2e2c;
+  --popover-foreground: #eae2b7;
+  --primary: #90a955;
+  --primary-foreground: #1a1918;
+  --secondary: #b08968;
+  --secondary-foreground: #faf9f6;
+  --muted: #3d3a38;
+  --muted-foreground: #b08968;
+  --accent: #90a955;
+  --accent-foreground: #faf9f6;
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: #3d3a38;
+  --input: #3d3a38;
+  --ring: #90a955;
+  --sidebar: #2f2e2c;
+  --sidebar-foreground: #eae2b7;
+  --sidebar-primary: #90a955;
+  --sidebar-primary-foreground: #1a1918;
+  --sidebar-accent: #3d3a38;
+  --sidebar-accent-foreground: #eae2b7;
+  --sidebar-border: #3d3a38;
+  --sidebar-ring: #90a955;
+}
+
+@theme inline {
+  /* Using Work Sans for headings and Inter for body */
+  --font-sans: "Inter", "Geist", "Geist Fallback", system-ui, -apple-system;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations for plants and organic movement */
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-sway {
+  animation: sway 3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
